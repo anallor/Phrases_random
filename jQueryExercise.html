@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <h3>jQuery Exercise</h3>
+    <br>
+    <div class="container"></div>
+
+      <button class="change">Change the phrase</button>
+    
+    <label>Add a new phrase</label>
+    <input name="input", id="input">
+    <ul class="inputs">
+      
+    </ul>
+
+    <button class="show">Show all quotes</button>
+    <button class="hide">Hide all quotes</button>
+    <ul class="allquotes"></ul>
+
+    </body>
+</html>
+
+     <script type="text/javascript">
+
+    var phrases = ['Frankly my dear, I do not give a damn', 'May the Force be with you.', 
+    'E.T. Phone home.', 'Well, nobody is perfect.', 'All those moments will be lost in time, like tears in rain.', 'Just keep swimming.', 'Well, what if there is no tomorrow? There was not one today.'];
+    var show = phrases[Math.floor(Math.random() * phrases.length)];
+     $('.container').text(show)
+
+
+    $('.change').on('click', function (event) {
+      var show = phrases[Math.floor(Math.random() * phrases.length)];
+      $('.container').text(show)
+    });
+
+    $('#theDiv').hide()
+ 
+    $("input").keypress(function(event) {
+    if (event.which == 13) {
+        var newquote = $('input[name="input"]').val();
+      $('.allquotes').append('<li>'+newquote+'</li>')
+    }
+});
+
+    var phrases;
+
+
+    for (i = 0; i < phrases.length; i++) {
+      var text = phrases[i];
+      $('.allquotes').append('<li>'+text+'</li>').prepend('<img src="x_spot_zidi.png" height="15" weight="15" />').hide()
+    };
+    
+
+    $('.show').on('click', function() {
+      $('.allquotes').show()
+    });
+
+    $('.hide').on('click', function() {
+      $('.allquotes').hide()
+    });
+  
+  
+    </script>
+
+  
+   
+
+
+
+
+
+
